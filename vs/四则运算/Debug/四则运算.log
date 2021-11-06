@@ -1,0 +1,4 @@
+﻿  源.cpp
+E:\c语言\vs\四则运算\源.cpp(114): warning C4715: “operate”: 不是所有的控件路径都返回值
+E:\c语言\vs\四则运算\源.cpp(151): warning C4715: “puanduanchar”: 不是所有的控件路径都返回值
+  四则运算.vcxproj -> E:\c语言\vs\四则运算\Debug\四则运算.exe
