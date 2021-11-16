@@ -1,0 +1,8 @@
+﻿  源.cpp
+E:\c语言\vs\图的邻接表储存与遍历\源.cpp(108,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\c语言\vs\图的邻接表储存与遍历\源.cpp(110,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\c语言\vs\图的邻接表储存与遍历\源.cpp(150,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\c语言\vs\图的邻接表储存与遍历\源.cpp(154,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\c语言\vs\图的邻接表储存与遍历\源.cpp(167,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\c语言\vs\图的邻接表储存与遍历\源.cpp(171,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  图的邻接表储存与遍历.vcxproj -> E:\c语言\vs\图的邻接表储存与遍历\Debug\图的邻接表储存与遍历.exe
