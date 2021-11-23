@@ -54,7 +54,7 @@ void pushstack(stack s,int num)
 		exit(-1);
 	}
 	pnew->data=num;
-	pnew->next=s->ptop->next;
+	pnew->next=s->ptop;
 	s->ptop=pnew;
 	printf("成功压入栈中！\n\n");
 }

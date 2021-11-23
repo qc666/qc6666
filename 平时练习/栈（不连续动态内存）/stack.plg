@@ -6,21 +6,13 @@
 --------------------Configuration: stack - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\MENGTA~1\AppData\Local\Temp\RSPDEFB.tmp" with contents
-[
-/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/stack.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"E:\c语言\平时练习\栈（不连续动态内存）\stack.cpp"
-]
-Creating command line "cl.exe @C:\Users\MENGTA~1\AppData\Local\Temp\RSPDEFB.tmp" 
-Creating temporary file "C:\Users\MENGTA~1\AppData\Local\Temp\RSPDEFC.tmp" with contents
+Creating temporary file "C:\Users\MENGTA~1\AppData\Local\Temp\RSP33D2.tmp" with contents
 [
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/stack.pdb" /debug /machine:I386 /out:"Debug/stack.exe" /pdbtype:sept 
 ".\Debug\stack.obj"
 ]
-Creating command line "link.exe @C:\Users\MENGTA~1\AppData\Local\Temp\RSPDEFC.tmp"
+Creating command line "link.exe @C:\Users\MENGTA~1\AppData\Local\Temp\RSP33D2.tmp"
 <h3>Output Window</h3>
-Compiling...
-stack.cpp
 Linking...
 
 

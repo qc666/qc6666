@@ -15,7 +15,7 @@ typedef struct VNode {
 }Vnode, * AdjList;
 
 typedef struct {
-	Vnode vertices[100];						//顶点数组
+	AdjList vertices;						//顶点数组
 	int vexnum;								//图顶点数
 	int arcnum;										//图边数
 	int kind;								//图类型
@@ -144,33 +144,28 @@ void creat_graph(AlGraph* G)
 	fscanf(fp, "%d", &G->kind);													//默认为无向图
 	fscanf(fp, "%d", &G->vexnum);
 	fscanf(fp, "%d", &G->arcnum);												//默认该图符合图的要求
+	G->vertices = (AdjList)malloc(sizeof(struct VNode) * G->vexnum);
 	int i = 0;                                                               //记录输入的顶点个数
 	while (i < G->vexnum)
 	{
 		G->vertices[i].firstarc = (Arcnode)malloc(sizeof(struct ArcNode));
 		Arcnode q = G->vertices[i].firstarc;
 		fscanf(fp, "%d", &q->adjvex);
-		int j, k = 0;
-		fscanf(fp, "%d", &j);
-		if (j == 0)
-		{
-			G->vertices[i].data = j;
-			q->nextarc = NULL;
-			q->info = -1;
-			i++;
-			continue;
-		}
-		while (k < j)
+		int k = 0;
+		//		fscanf(fp, "%d", &j);
+		while (1)
 		{
 			Arcnode p = (Arcnode)malloc(sizeof(struct ArcNode));
-			fscanf(fp, "%d %d", &p->adjvex, &p->info);
-			//fscanf(fp, "%d", &p->info);
+			fscanf(fp, "%d", &p->adjvex);
+			fscanf(fp, "%d", &p->info);
 			q->nextarc = p;
 			q = p;
 			k++;
+			if (fgetc(fp) == '\n' || feof(fp))
+				break;
 		}
 		q->nextarc = NULL;
-		G->vertices[i].data = j;
+		G->vertices[i].data = k;
 		i++;
 	}
 	fclose(fp);

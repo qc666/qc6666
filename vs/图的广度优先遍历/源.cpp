@@ -6,7 +6,7 @@ int number = 0;				//统计连通图个数
 typedef struct ArcNode {
 	int adjvex;							//所指的点的位置；
 	struct ArcNode* nextarc;			//指向下一个邻接点；
-	//int info;							//假设存了权重；
+	int info;							//假设存了权重；
 }*Arcnode;
 
 typedef struct VNode {
@@ -58,7 +58,7 @@ void BFSTraverse(AlGraph G)
 	Queue Q;
 	Arcnode q;
 	initqueue(&Q);
-	int v = 0;
+	int v = 0, w;
 	bool* visited = (bool*)malloc(sizeof(bool) * G.vexnum);
 	for (; v < G.vexnum; v++)
 		visited[v] = false;
@@ -68,11 +68,11 @@ void BFSTraverse(AlGraph G)
 			visited[v] = true;
 			q = G.vertices[v].firstarc;
 			printf("   %d", q->adjvex);
-			Enqueue(&Q,q->adjvex);
+			Enqueue(&Q, q->adjvex);
 			while (!Empty_queue(&Q))
 			{
-				v = Dequeue(&Q);
-				q = G.vertices[v].firstarc;
+				w = Dequeue(&Q);
+				q = G.vertices[w].firstarc->nextarc;
 				while (q != NULL)
 				{
 					if (!visited[q->adjvex])
@@ -87,6 +87,7 @@ void BFSTraverse(AlGraph G)
 			number++;
 //			Dequeue(&Q);
 		}
+
 }
 
 bool Empty_queue(Queue* Q)
@@ -137,26 +138,24 @@ void creat_graph(AlGraph* G)
 		G->vertices[i].firstarc = (Arcnode)malloc(sizeof(struct ArcNode));
 		Arcnode q = G->vertices[i].firstarc;
 		fscanf(fp, "%d", &q->adjvex);
-		int j, k = 0;
-		fscanf(fp, "%d", &j);
-		if (j == 0)
+		int k = 0;
+//		fscanf(fp, "%d", &j);
+		while (1)
 		{
-			G->vertices[i].data = j;
-			q->nextarc = NULL;
-			i++;
-			continue;
-		}
-		while (k < j)
-		{
+			if (fgetc(fp) == '\n' || feof(fp))
+				break;
 			Arcnode p = (Arcnode)malloc(sizeof(struct ArcNode));
 			fscanf(fp, "%d", &p->adjvex);
-			//p->adjvex--;
+			fscanf(fp, "%d", &p->info);
 			q->nextarc = p;
 			q = p;
 			k++;
+	/*		if (fgetc(fp) == '\n' || feof(fp))
+				break;*/
 		}
 		q->nextarc = NULL;
-		G->vertices[i].data = j;
+		G->vertices[i].data = k;
+		k = 0;
 		i++;
 	}
 	fclose(fp);
